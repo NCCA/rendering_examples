@@ -4,13 +4,12 @@
 TEMPLATE = app
 
 # Is this using the lab build? (this is for my personal use - RS)
-LAB_BUILD = false
+LAB_BUILD = true
 
 # Check to see if you have a custom NGL installation directory
 NGLPATH = $$(NGLDIR)
 isEmpty(NGLPATH) {
   NGLPATH = $$(HOME)/NGL
-disp(NGLPATH)
 } 
 
 # Check to see if there is a custom IGL directory (I've put it on /public/devel)
@@ -37,7 +36,7 @@ isEmpty(EIGENPATH) {
 }
 
 # The include path - includes a number of environment variables (see README.md)
-INCLUDEPATH += . /usr/include $$NGLPATH/include ../common/include $$IGLPATH/include  $$EIGENPATH $$NOISEINCPATH
+INCLUDEPATH += $$NGLPATH/include ../common/include $$IGLPATH/include $$EIGENPATH $$NOISEINCPATH
 
 # The config includes C++11 features. I'll assume you want debug mode!
 CONFIG += c++11 debug

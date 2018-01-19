@@ -41,7 +41,14 @@ void MultiBufferIndexVAO::draw(int _startIndex, int _amount) const
   }
 }
 
-
+ngl::Real * MultiBufferIndexVAO::mapBuffer(unsigned int _index, GLenum _accessMode)
+{
+    ngl::Real *ptr=nullptr;
+    bind();
+    glBindBuffer(GL_ARRAY_BUFFER, m_id);
+    ptr = static_cast<ngl::Real *>(glMapBuffer(GL_ARRAY_BUFFER, _accessMode));
+    return ptr;
+  }
 
 void MultiBufferIndexVAO::removeVAO()
 {

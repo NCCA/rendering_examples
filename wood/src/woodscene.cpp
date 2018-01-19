@@ -42,7 +42,7 @@ void WoodScene::initGL() noexcept {
     m_diffuseTex.bind();
 
     ngl::ShaderLib::instance()->use("WoodProgram");
-    shader->setShaderParam1i("woodTex", 0); // The "0" here is the Active Texture unit
+    shader->setUniform("woodTex", 0); // The "0" here is the Active Texture unit
 }
 
 void WoodScene::paintGL() noexcept {

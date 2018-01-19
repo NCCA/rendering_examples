@@ -5,7 +5,7 @@
 #include "glinclude.h"
 
 // Standard includes for console output etc.
-#include <stdlib.h>
+// #include <stdlib.h>
 #include <iostream>
 
 // Includes for GLM

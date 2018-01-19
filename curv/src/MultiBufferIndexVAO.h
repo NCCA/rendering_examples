@@ -48,6 +48,12 @@ class  MultiBufferIndexVAO : public ngl::AbstractVAO
     //----------------------------------------------------------------------------------------------------------------------
      GLuint getBufferID(unsigned int ){return m_buffer;}
 
+     //----------------------------------------------------------------------------------------------------------------------
+     /// @brief grab a raw pointer to the data
+     /// @param _index the index to the buffer (0) default for simple
+     /// @param _mode the access more
+     //----------------------------------------------------------------------------------------------------------------------
+     ngl::Real * mapBuffer(unsigned int _index=0, GLenum _accessMode=GL_READ_WRITE);
   protected :
     //----------------------------------------------------------------------------------------------------------------------
     /// @brief ctor calles parent ctor to allocate vao;

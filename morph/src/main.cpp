@@ -119,7 +119,7 @@ int main() {
 #if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
     glewExperimental = GL_TRUE;
     glewInit();
-    GLenum error = glGetError(); // quietly eat errors from glewInit()
+    glGetError(); // quietly eat errors from glewInit()
 #endif
 
     // Set keyboard callback
