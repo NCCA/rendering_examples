@@ -105,7 +105,8 @@ void TrackballCamera::mouseRotate(double mouseX, double mouseY) {
  * @param mouseY
  */
 void TrackballCamera::mouseZoom(double mouseX, double mouseY) {
-    m_zoom = glm::clamp(m_zoom + (mouseY - m_lastY) * 0.01 * m_sensitivity, 0.0, 10.0);
+    m_zoom = glm::clamp(m_zoom + (mouseY - m_lastY) * m_sensitivity, 0.0, 10.0);
+    m_lastY = mouseY;
 }
 
 /**
