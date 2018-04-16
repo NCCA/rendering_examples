@@ -155,27 +155,8 @@ void CurvScene::buildVAO() {
     m_vao->setIndices(f_cnt, F.data(), GL_UNSIGNED_INT);
 
     // Don't know why I need to specify this twice . . .
-    m_vao->setNumIndices(f_cnt);
+    m_vao->setNumIndices(f_cnt); 
 
-    // Set the attribute pointers for both shaders
-    (*shader)["GouraudProgram"]->use();
-    // Set the vertex attribute pointer
-    m_vao->setVertexAttributePointer(0, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     0, // unsigned int _dataOffset
-                                     false); // bool _normalise=false
-
-    // Set the normal attribute pointer
-    m_vao->setVertexAttributePointer(2, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     3, // unsigned int _dataOffset
-                                     true); // bool _normalise=false
-
-    (*shader)["Curvature"]->use();
     // Set the vertex attribute pointer
     m_vao->setVertexAttributePointer(0, // GLuint _id
                                      3, // GLint _size
@@ -205,43 +186,6 @@ void CurvScene::buildVAO() {
                                      12 * sizeof(GLfloat), // GLsizei _stride
                                      9, // unsigned int _dataOffset
                                      true); // bool _normalise=false
-
-    // Set the attribute pointers for the Brushed Metal shader
-    (*shader)["BrushedMetalProgram"]->use();
-    // Set the vertex attribute pointer
-    m_vao->setVertexAttributePointer(0, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     0, // unsigned int _dataOffset
-                                     false); // bool _normalise=false
-
-    // Set the normal attribute pointer
-    m_vao->setVertexAttributePointer(2, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     3, // unsigned int _dataOffset
-                                     true); // bool _normalise=false
-
-    // Set the K1 attribute pointer (disable normalise for magnitude visualisation)
-    m_vao->setVertexAttributePointer(3, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     6, // unsigned int _dataOffset
-                                     true); // bool _normalise=false
-
-    // Set the K2 attribute pointer (disable normalise for magnitude visualisation)
-    m_vao->setVertexAttributePointer(4, // GLuint _id
-                                     3, // GLint _size
-                                     GL_FLOAT, // GLenum _type
-                                     12 * sizeof(GLfloat), // GLsizei _stride
-                                     9, // unsigned int _dataOffset
-                                     true); // bool _normalise=false
-
-    // now unbind
-//    m_vao->unbind();
 }
 
 
