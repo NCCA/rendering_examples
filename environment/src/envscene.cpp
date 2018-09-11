@@ -7,6 +7,7 @@
 #include <ngl/ShaderLib.h>
 #include <ngl/Image.h>
 
+
 EnvScene::EnvScene() : Scene() {}
 
 void EnvScene::initGL() noexcept {
@@ -141,14 +142,14 @@ void EnvScene::initEnvironment() {
     glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 
     // Set the texture parameters for the cube map
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_GENERATE_MIPMAP, GL_TRUE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_AUTO_GENERATE_MIPMAP, GL_TRUE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     GLfloat anisotropy;
-    glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &anisotropy);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropy);
+    glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY, &anisotropy);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_ANISOTROPY, anisotropy);
 
     // Set our cube map texture to on the shader so we can use it
     ngl::ShaderLib *shader=ngl::ShaderLib::instance();

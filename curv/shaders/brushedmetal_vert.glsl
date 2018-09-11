@@ -1,7 +1,7 @@
 #version 420 core
 layout (location = 0) in vec3 VertPos;    // The input vertex position
-layout (location = 1) in vec2 VertUV;     // The input UV coordinate
-layout (location = 2) in vec3 VertNormal; // The input normal
+layout (location = 1) in vec3 VertNormal; // The input normal
+layout (location = 2) in vec2 VertUV;     // The input UV coordinate
 layout (location = 3) in vec3 VertK1;     // The input maximum principle curvature
 layout (location = 4) in vec3 VertK2;     // The input minimum principle curvature
 

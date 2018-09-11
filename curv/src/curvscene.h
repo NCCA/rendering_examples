@@ -28,7 +28,7 @@ public:
 
 private:
     /// Store a unique pointer to the vertex array object to be rendered in our scene
-    std::unique_ptr<MultiBufferIndexVAO> m_vao;
+    std::unique_ptr<ngl::AbstractVAO> m_vao;
 
     /// Build the Vertex Array Object to store all the curvature information
     void buildVAO();

@@ -7,13 +7,12 @@
 class  MultiBufferIndexVAO : public ngl::AbstractVAO
 {
   public :
-
     //----------------------------------------------------------------------------------------------------------------------
     /// @brief creator method for the factory
     /// @param _mode the mode to draw with.
     /// @returns a new AbstractVAO * object
     //----------------------------------------------------------------------------------------------------------------------
-    static ngl::AbstractVAO *create(GLenum _mode=GL_TRIANGLES) { return new MultiBufferIndexVAO(_mode); }
+    static std::unique_ptr<ngl::AbstractVAO>create(GLenum _mode=GL_TRIANGLES) { return std::unique_ptr<AbstractVAO>(new MultiBufferIndexVAO(_mode)); }
     //----------------------------------------------------------------------------------------------------------------------
     /// @brief draw the VAO using glDrawArrays
     //----------------------------------------------------------------------------------------------------------------------

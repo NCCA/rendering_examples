@@ -2,7 +2,7 @@
 #include "texscene.h"
 
 // This will probably already be included by a scene file
-#include "glinclude.h"
+//#include "glinclude.h"
 #include "fixedcamera.h"
 #include "trackballcamera.h"
 
@@ -108,11 +108,11 @@ int main() {
     glfwMakeContextCurrent(window);
 
     // Initialise GLEW - note this generates an "invalid enumerant" error on some platforms
-#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
-    glewExperimental = GL_TRUE;
-    glewInit();
-    glGetError(); // quietly eat errors from glewInit()
-#endif
+//#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
+//    glewExperimental = GL_TRUE;
+//    glewInit();
+//    glGetError(); // quietly eat errors from glewInit()
+//#endif
 
     // Set keyboard callback
     glfwSetKeyCallback(window, key_callback);

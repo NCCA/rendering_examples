@@ -32,6 +32,7 @@ void key_callback(GLFWwindow* window, int key, int /*scancode*/, int action, int
         switch(key) {
         case GLFW_KEY_ESCAPE: //exit the application
             glfwSetWindowShouldClose(window, true);
+            break; // shouldn't be needed, but gets rid of a warning
         case GLFW_KEY_LEFT_BRACKET: //decrease fin size
             g_scene.decreaseFins();
             break;
@@ -81,13 +82,6 @@ int main() {
     }
     // Make the window an OpenGL window
     glfwMakeContextCurrent(window);
-
-    // Initialise GLEW - note this generates an "invalid enumerant" error on some platforms
-#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
-    glewExperimental = GL_TRUE;
-    glewInit();
-    glGetError(); // quietly eat errors from glewInit()
-#endif
 
     // Set keyboard callback
     glfwSetKeyCallback(window, key_callback);

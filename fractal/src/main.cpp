@@ -2,7 +2,7 @@
 #include "fractalscene.h"
 
 // This will probably already be included by a scene file
-#include "glinclude.h"
+//#include "glinclude.h"
 #include "trackballcamera.h"
 
 // Includes for GLFW
@@ -68,6 +68,7 @@ void key_callback(GLFWwindow* window, int key, int /*scancode*/, int action, int
         switch(key) {
         case GLFW_KEY_ESCAPE: //exit the application
             glfwSetWindowShouldClose(window, true);
+            break; // needed to avoid compilation warnings.
         case GLFW_KEY_SPACE:
             g_scene.toggleAnimating();
             break;
@@ -133,11 +134,11 @@ int main() {
     glfwMakeContextCurrent(window);
 
     // Initialise GLEW - note this generates an "invalid enumerant" error on some platforms
-#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
-    glewExperimental = GL_TRUE;
-    glewInit();
-    GLenum error = glGetError(); // quietly eat errors from glewInit()
-#endif
+//#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
+//    glewExperimental = GL_TRUE;
+//    glewInit();
+//    GLenum error = glGetError(); // quietly eat errors from glewInit()
+//#endif
 
     // Set keyboard callback
     glfwSetKeyCallback(window, key_callback);

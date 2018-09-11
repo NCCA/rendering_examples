@@ -4,7 +4,7 @@
 layout (location=0) in vec3 VertexPosition;
 
 // The UV's of the vertex
-layout (location=1) in vec2 VertexUV;
+layout (location=2) in vec2 VertexUV;
 
 // We need an MVP because the plane needs to be rotated
 uniform mat4 MVP;

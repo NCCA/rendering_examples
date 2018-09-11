@@ -11,11 +11,11 @@ uniform mat3 N; // This is the inverse transpose of the mv matrix
 // The vertex position attribute
 layout (location=0) in vec3 VertexPosition;
 
-// The texture coordinate attribute
-layout (location=1) in vec2 TexCoord;
-
 // The vertex normal attribute
-layout (location=2) in vec3 VertexNormal;
+layout (location=1) in vec3 VertexNormal;
+
+// The texture coordinate attribute
+layout (location=2) in vec2 TexCoord;
 
 // These attributes are passed onto the shader (should they all be smoothed?)
 smooth out vec3 WSVertexPosition;

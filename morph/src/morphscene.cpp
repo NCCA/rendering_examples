@@ -98,14 +98,14 @@ void MorphScene::initMeshes() {
     GLuint f_cnt = F.rows() * F.cols();
 
     // create a vao as a series of GL_TRIANGLES
-    m_vao.reset(static_cast<MultiBufferIndexVAO *>(ngl::VAOFactory::createVAO("multiBufferIndexVAO", GL_TRIANGLES)) );
+    m_vao = ngl::VAOFactory::createVAO("multiBufferIndexVAO", GL_TRIANGLES);
     m_vao->bind();
 
     // in this case we are going to set our data as the vertices above
     m_vao->setData(MultiBufferIndexVAO::VertexData(v_cnt * sizeof(float),Vertices.data()[0]));
 
     // Copy across the face indices
-    m_vao->setIndices(f_cnt, F.data(), GL_UNSIGNED_INT);
+    static_cast<MultiBufferIndexVAO *>( m_vao.get())->setIndices(f_cnt, F.data(), GL_UNSIGNED_INT);
 
     // Don't know why I need to specify this twice . . .
     m_vao->setNumIndices(f_cnt);

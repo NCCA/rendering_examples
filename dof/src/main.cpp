@@ -88,13 +88,6 @@ int main() {
     // Make the window an OpenGL window
     glfwMakeContextCurrent(window);
 
-    // Initialise GLEW - note this generates an "invalid enumerant" error on some platforms
-#if ( (!defined(__MACH__)) && (!defined(__APPLE__)) )
-    glewExperimental = GL_TRUE;
-    glewInit();
-    glGetError(); // quietly eat errors from glewInit()
-#endif
-
     // Set keyboard callback
     glfwSetKeyCallback(window, key_callback);
 

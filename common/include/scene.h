@@ -2,7 +2,7 @@
 #define SCENE_H
 
 // Includes the GL headers in platform independent and order specific way
-#include "glinclude.h"
+#include <ngl/Types.h>
 
 // Standard includes for console output etc.
 // #include <stdlib.h>

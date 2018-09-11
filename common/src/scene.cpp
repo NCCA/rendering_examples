@@ -2,6 +2,7 @@
 
 // Needed for memset
 #include <string.h>
+#include <GL/glu.h>
 
 Scene::Scene() : m_width(1), m_height(1), m_ratio(1.0f) {
 

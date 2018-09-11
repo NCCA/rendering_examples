@@ -9,7 +9,7 @@
 #include <OpenGL/glext.h>
 #elif (defined(WIN32))
 #include <GL/glew.h>
-//#include <GL/glu.h>
+#include <GL/glu.h>
 #include <GL/gl.h>
 #else
 #include <GL/glew.h>
