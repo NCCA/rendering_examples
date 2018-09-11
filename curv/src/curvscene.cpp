@@ -165,7 +165,7 @@ void CurvScene::buildVAO() {
                                      0, // unsigned int _dataOffset
                                      false); // bool _normalise=false
     // Set the normal attribute pointer
-    m_vao->setVertexAttributePointer(2, // GLuint _id
+    m_vao->setVertexAttributePointer(1, // GLuint _id
                                      3, // GLint _size
                                      GL_FLOAT, // GLenum _type
                                      12 * sizeof(GLfloat), // GLsizei _stride

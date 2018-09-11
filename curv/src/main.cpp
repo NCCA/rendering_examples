@@ -32,6 +32,7 @@ void key_callback(GLFWwindow* window, int key, int /*scancode*/, int action, int
         switch(key) {
         case GLFW_KEY_ESCAPE: //exit the application
             glfwSetWindowShouldClose(window, true);
+            break; // to avoid compilation warning
         case GLFW_KEY_RIGHT_BRACKET: // increase alphaX  
             g_scene.setAlphaX(g_scene.getAlphaX() + 0.1f);
             break;
