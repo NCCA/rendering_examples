@@ -1,6 +1,7 @@
 #include "morphscene.h"
 
 // GLM includes
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/spline.hpp>
 

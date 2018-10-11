@@ -11,6 +11,7 @@
 #include <GLFW/glfw3.h>
 
 // Needed for matrix operations
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 
 // Used to maintain a timer
