@@ -49,7 +49,9 @@ OBJECTS_DIR = obj
 
 # The libs path (this will change depending on your platform
 if ($$LAB_BUILD) {
-  LIBS += -lXi -ldl -lX11 -lXrandr -lXinerama -lXcursor -lXxf86vm /public/devel/2018/lib/libglfw3.a
+  LIBS+=$$system(pkg-config --libs glfw3)
+	
+  LIBS += -lXi -ldl -lX11 -lXrandr -lXinerama -lXcursor -lXxf86vm 
   DEFINES += GLM_ENABLE_EXPERIMENTAL
 } else {
   LIBS += -lglfw
