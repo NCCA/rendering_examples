@@ -51,7 +51,7 @@ OBJECTS_DIR = obj
 if ($$LAB_BUILD) {
   LIBS+=$$system(pkg-config --libs glfw3)
 	
-  LIBS += -lXi -ldl -lX11 -lXrandr -lXinerama -lXcursor -lXxf86vm 
+  LIBS += -lXi -ldl -lX11 -lXrandr -lXinerama -lXcursor -lXxf86vm /public/devel/2018/lib/libglfw3.a
   DEFINES += GLM_ENABLE_EXPERIMENTAL
 } else {
   LIBS += -lglfw
